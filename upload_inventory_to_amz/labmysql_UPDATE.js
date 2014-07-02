@@ -8,23 +8,34 @@ var connection = mysql.createConnection({
 });
 
 
-function recordResultOfUploadToAmazon(feedtype, submissionID, callbackOK) {
-    connection.query('INSERT INTO MWSFeedUpload SET ?', {"FeedType": feedtype, "SubmissionID": submissionID}, function(err, result){
-	if (err) {
-	    throw(err);
-	}else{
-	    console.log(result.insertId);
-	    if (callbackOK) {
-		callbackOK(result.insertId);
-	    }
-	}
-    });
+function visitRows(statusToFind) {
+    connection.query('SELECT * FROM MWSFeedUpload WHERE Status = ' + connection.escape(statusToFind),
+		     function(err, rows, fields){
+			 if (err) {
+			     throw(err);
+			 }else{
+			     for (var i=0; i<rows.length; i++) {
+				 // Processing one row: grab its submission ID
+				 var submissionID = rows[i].SubmissionID;
+				 var rowid = rows[i].rowid;
+				 // Invoke MWS FeedSubmissionResults()
+				 // client.invoke with callback that does this if the result is now OK:
+				 connection.query('UPDATE MWSFeedUpload SET Status = "PENDING" WHERE rowid = ' + rowid,
+						  function(err, result) {
+						      console.log("err is" + err);
+						  })
+			     }
+			 }
+		     }
+		    );
 }
+
 
 connection.connect(function(err){
     if (err) {
 	throw(err);
     }else{
-	recordResultOfUploadToAmazon("_POST_PRODUCT_DATA_", 3428932);
+	visitRows("OK");
     }
 });
+
