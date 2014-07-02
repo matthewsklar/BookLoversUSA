@@ -9,10 +9,31 @@ var mysql = require('mysql');
 var inputFile = process.argv[3];
 
 // CONFIGURATION ==========================================================
+var connection = mysql.createConnection({
+    host: 'tsunami2014.cwj0cl8a8xkt.us-west-2.rds.amazonaws.com',
+    user: 'admin',
+    password: 'ioi3JFI3lsne42',
+    database: "tsu2014"
+});
+
 var header = '<?xml version="1.0" encoding="utf-8" ?>\n<AmazonEnvelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="amzn-envelope.xsd">\n';
 var closer = '</AmazonEnvelope>';
 
+var connected = false;
+
 // RUN ====================================================================
+function recordResultofUploadtoAmazon(feedType, submissionId) {
+	connection.query("INSERT INTO MWSFeedUpload SET ?", {"FeedType" : feedType, "SubmissionID" : submissionId}, function (err, result) {
+		if (err) throw err;
+		else console.log(result.insertId);
+	});
+}
+
+connection.connect(function(err) {
+	if (err) throw err;
+	else connected = true;
+});
+
 function createProductFeedXml(data) {
 	var parsed = JSON.parse(JSON.stringify(data.toString('utf-8')));
 	var newLine = parsed.split("\n");
@@ -152,13 +173,9 @@ function submitFeed(feedType, filepath) {
 			console.log(JSON.stringify(RESULT));
 			console.log("--------");
 			var submitId = RESULT.SubmitFeedResponse.SubmitFeedResult[0].FeedSubmissionInfo[0].FeedSubmissionId[0];
-			fs.writeFile("XMLFeedFiles/" + submitId + feedType + ".txt", xml, function(err) {
-				if (err) return console.log(err);
-				var sf = new mwsFeedsAPI.requests.GetFeedSubmissionResult();
-				sf.params.FeedSubmissionId.value = submitId;
-				client.invoke(sf, function(RESULT2){
-
-				});			
+			if (connected) recordResultofUploadtoAmazon(feedType, submitId);
+			fs.writeFile("upload_inventory_to_amz/XMLFeedFiles/" + submitId + feedType + ".txt", xml, function(err) {
+				if (err) return console.log(err);		
 			});
 		});
 	});
