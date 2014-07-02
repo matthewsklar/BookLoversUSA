@@ -1,28 +1,14 @@
 // SET UP =================================================================
-var express = require("express");
-var app = express();
 var o2x = require("object-to-xml");
 var fs = require("fs");
-var http = require("http");
-var queryString = require("querystring");
 var mws14 = require('mws-js-2014'),
 	client = new mws14.Client('AKIAJGREBSMHBMKOVIJA', process.argv[2], 'A1G3C0ZGNICMNG', {});
-//var mws = require('mws-js-2014/lib/mws.js'), client = mws.AmazonMwsClient('AKIAJGREBSMHBMKOVIJA', 'iXa9XSVUhxYoN9u/wsCjUEtLGXJawKhD7NC/Qb0z', 'A1G3C0ZGNICMNG', {});
 var mwsFeedsAPI = require('mws-js-2014/lib/feeds.js');   
 var mysql = require('mysql'); 
 
 var inputFile = process.argv[3];
 
 // CONFIGURATION ==========================================================
-app.set("view engine", "jade");
-app.use(require('stylus').middleware({ src: __dirname + '/public' }));
-
-var connection = mysql.createConnection({
-	host     : 'tsunami2014.cwj0cl8a8xkt.us-west-2.rds.amazonaws.com',
-	user     : 'admin',
-	password : 'ioi3JFI3lsne42'
-});
-
 var header = '<?xml version="1.0" encoding="utf-8" ?>\n<AmazonEnvelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="amzn-envelope.xsd">\n';
 var closer = '</AmazonEnvelope>';
 
