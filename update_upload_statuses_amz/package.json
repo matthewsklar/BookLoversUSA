@@ -2,8 +2,7 @@
   "name": "node-authentication",
   "main": "upload_inventory_to_amz.js",
   "dependencies": {
-    "mws-js-2014": "^0.9.1",
-    "mysql": "^2.3.2",
-    "object-to-xml": "0.0.2"
+    "mws-js-2014": "^0.9.1",  	
+    "mysql": "^2.3.2"
   }
 }
