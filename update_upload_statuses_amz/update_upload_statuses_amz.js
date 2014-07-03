@@ -9,31 +9,35 @@ var connection = mysql.createConnection({
     password: 'ioi3JFI3lsne42',
     database: "tsu2014"
 });
-function visitRows() {
-    connection.query('SELECT * FROM MWSFeedUpload WHERE Status = "PENDING"',
-		function(err, rows, fields) {
-			if (err) {
-			    throw(err);
-			} else {
-			    for (var i=0; i<rows.length; i++) {
-				var submissionId = rows[i].SubmissionID;
-				var rowid = rows[i].rowid;
-				var sf = new mwsFeedsAPI.requests.GetFeedSubmissionResult();
-				sf.params.FeedSubmissionId.value = submissionId;
-				client.invoke(sf, function(RESULT) {
-					console.log(JSON.stringify(RESULT));
-					console.log("--------------------");
-					connection.query('UPDATE MWSFeedUpload SET Status = "OK" WHERE rowid = ' + rowid,
-						function(err, result) {
-							console.log("err is" + err);
-						});
-				    });
-				}
-				// Invoke MWS FeedSubmissionResults()
-				// client.invoke with callback that does this if the result is now OK:
-			}
+
+function update(rows, rowLength, i) {
+	var submissionId = rows[i].SubmissionID;
+	var rowid = rows[i].rowid;
+	var sf = new mwsFeedsAPI.requests.GetFeedSubmissionResult();
+	sf.params.FeedSubmissionId.value = submissionId;
+	client.invoke(sf, function(RESULT) {
+		console.log(JSON.stringify(RESULT));
+		console.log("--------------------");
+		var result = RESULT.AmazonEnvelope.Message[0].ProcessingReport[0].StatusCode[0];				
+		if (result == "Complete") {
+			connection.query('UPDATE MWSFeedUpload SET Status = "OK" WHERE rowid = ' + rowid, function(err, result) {
+				console.log("err is" + err);
+				if (i < rowLength - 1) update(rows, rowLength, i + 1);
+			});
+		} else {
+			update(rows, rowLength, i + 1);
 		}
-    );
+    });
+}
+
+function visitRows() {
+    connection.query('SELECT * FROM MWSFeedUpload WHERE Status = "PENDING"', function(err, rows, fields) {
+		if (err) {
+		    throw(err);
+		} else {
+			if (rows.length != 0) update(rows, rows.length, 0);
+		}
+    });
 }
 
 connection.connect(function(err) {
