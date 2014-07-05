@@ -18,14 +18,21 @@ function update(rows, rowLength, i) {
 	client.invoke(sf, function(RESULT) {
 		console.log(JSON.stringify(RESULT));
 		console.log("--------------------");
-		var result = RESULT.AmazonEnvelope.Message[0].ProcessingReport[0].StatusCode[0];				
-		if (result == "Complete") {
-			connection.query('UPDATE MWSFeedUpload SET Status = "OK" WHERE rowid = ' + rowid, function(err, result) {
-				console.log("err is" + err);
+		if (JSON.stringify(RESULT).charAt(2) == 'A') {
+			var result = RESULT.AmazonEnvelope.Message[0].ProcessingReport[0].StatusCode[0];			
+			if (result == "Complete") {
+				connection.query('UPDATE MWSFeedUpload SET Status = "OK" WHERE rowid = ' + rowid, function(err, result) {
+					if (err) throw err;
+					if (i < rowLength - 1) update(rows, rowLength, i + 1);
+				});
+			} else {
+				if (i < rowLength - 1) update(rows, rowLength, i + 1);
+			}
+		} else if (JSON.stringify(RESULT).charAt(2) == 'E') {
+			connection.query('UPDATE MWSFeedUpload SET Status = "ERROR" WHERE rowid = ' + rowid, function(err, result) {
+				if (err) throw err;
 				if (i < rowLength - 1) update(rows, rowLength, i + 1);
 			});
-		} else {
-			update(rows, rowLength, i + 1);
 		}
     });
 }
