@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<AmazonEnvelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="amzn-envelope.xsd">
+<Header>
+  <DocumentVersion>1.01</DocumentVersion>
+  <MerchantIdentifier>A1G3C0ZGNICMNG</MerchantIdentifier>
+</Header>
+<MessageType>Inventory</MessageType>
+<PurgeAndReplace>false</PurgeAndReplace>
+<Message>
+  <MessageID>1</MessageID>
+  <OperationType>Update</OperationType>
+  <Inventory>
+    <SKU>ABE-1409663511</SKU>
+    <Quantity>1</Quantity>
+  </Inventory>
+</Message>
+<Message>
+  <MessageID>2</MessageID>
+  <OperationType>Update</OperationType>
+  <Inventory>
+    <SKU>BKL9780066210810</SKU>
+    <Quantity>1</Quantity>
+  </Inventory>
+</Message>
+<Message>
+  <MessageID>3</MessageID>
+  <OperationType>Update</OperationType>
+  <Inventory>
+    <SKU>BKL9780375844461</SKU>
+    <Quantity>1</Quantity>
+  </Inventory>
+</Message>
+<Message>
+  <MessageID>4</MessageID>
+  <OperationType>Update</OperationType>
+  <Inventory>
+    <SKU>BKL9780374166854</SKU>
+    <Quantity>1</Quantity>
+  </Inventory>
+</Message>
+<Message>
+  <MessageID>5</MessageID>
+  <OperationType>Update</OperationType>
+  <Inventory>
+    <SKU>BKL9780495826392</SKU>
+    <Quantity>1</Quantity>
+  </Inventory>
+</Message>
+<Message>
+  <MessageID>6</MessageID>
+  <OperationType>Update</OperationType>
+  <Inventory>
+    <SKU>BKL9781557885227</SKU>
+    <Quantity>1</Quantity>
+  </Inventory>
+</Message>
+<Message>
+  <MessageID>7</MessageID>
+  <OperationType>Update</OperationType>
+  <Inventory>
+    <SKU>BKL9780670020522</SKU>
+    <Quantity>1</Quantity>
+  </Inventory>
+</Message>
+<Message>
+  <MessageID>8</MessageID>
+  <OperationType>Update</OperationType>
+  <Inventory>
+    <SKU>BKL9780060884598</SKU>
+    <Quantity>1</Quantity>
+  </Inventory>
+</Message>
+<Message>
+  <MessageID>9</MessageID>
+  <OperationType>Update</OperationType>
+  <Inventory>
+    <SKU>BKL723724466029</SKU>
+    <Quantity>1</Quantity>
+  </Inventory>
+</Message>
+<Message>
+  <MessageID>10</MessageID>
+  <OperationType>Update</OperationType>
+  <Inventory>
+    <SKU>BKL074646039625</SKU>
+    <Quantity>1</Quantity>
+  </Inventory>
+</Message>
+<Message>
+  <MessageID>11</MessageID>
+  <OperationType>Update</OperationType>
+  <Inventory>
+    <SKU>BKL9780470683989</SKU>
+    <Quantity>1</Quantity>
+  </Inventory>
+</Message>
+<Message>
+  <MessageID>12</MessageID>
+  <OperationType>Update</OperationType>
+  <Inventory>
+    <SKU>BKL9780814632857</SKU>
+    <Quantity>6</Quantity>
+  </Inventory>
+</Message>
+<Message>
+  <MessageID>13</MessageID>
+  <OperationType>Update</OperationType>
+  <Inventory>
+    <SKU>BKL859156231727</SKU>
+    <Quantity>1</Quantity>
+  </Inventory>
+</Message>
+<Message>
+  <MessageID>14</MessageID>
+  <OperationType>Update</OperationType>
+  <Inventory>
+    <SKU>BKL9781593762384</SKU>
+    <Quantity>1</Quantity>
+  </Inventory>
+</Message>
+<Message>
+  <MessageID>15</MessageID>
+  <OperationType>Update</OperationType>
+  <Inventory>
+    <SKU>BKL9780738562834</SKU>
+    <Quantity>2</Quantity>
+  </Inventory>
+</Message>
+<Message>
+  <MessageID>16</MessageID>
+  <OperationType>Update</OperationType>
+  <Inventory>
+    <SKU>BKL9780345325228</SKU>
+    <Quantity>2</Quantity>
+  </Inventory>
+</Message>
+<Message>
+  <MessageID>17</MessageID>
+  <OperationType>Update</OperationType>
+  <Inventory>
+    <SKU>BKL9781591747000</SKU>
+    <Quantity>2</Quantity>
+  </Inventory>
+</Message>
+<Message>
+  <MessageID>18</MessageID>
+  <OperationType>Update</OperationType>
+  <Inventory>
+    <SKU>BKL9780071598286</SKU>
+    <Quantity>5</Quantity>
+  </Inventory>
+</Message>
+</AmazonEnvelope>

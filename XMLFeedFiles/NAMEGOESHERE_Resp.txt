@@ -1,0 +1,262 @@
+{"SubmitFeedResponse":{"$":{"xmlns":"http://mws.amazonaws.com/doc/2009-01-01/"},"SubmitFeedResult":[{"FeedSubmissionInfo":[{"FeedSubmissionId":["10358149680"],"FeedType":["_POST_PRODUCT_DATA_"],"SubmittedDate":["2014-07-01T01:51:49+00:00"],"FeedProcessingStatus":["_SUBMITTED_"]}]}],"ResponseMetadata":[{"RequestId":["b7908270-4b85-4495-a5ac-21204882fe33"]}]}}
+<?xml version="1.0" encoding="utf-8" ?>
+<AmazonEnvelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="amzn-envelope.xsd">
+<Header>
+  <DocumentVersion>1.01</DocumentVersion>
+  <MerchantIdentifier>A1G3C0ZGNICMNG</MerchantIdentifier>
+</Header>
+<MessageType>Product</MessageType>
+<PurgeAndReplace>false</PurgeAndReplace>
+<Message>
+  <MessageID>1</MessageID>
+  <OperationType>Update</OperationType>
+  <Product>
+    <SKU>ABE-1409663511</SKU>
+    <StandardProductID>
+      <Type>UPC</Type>
+      <Value>9782841355662</Value>
+    </StandardProductID>
+    <DescriptionData>
+      <Title>L'ALSACE par la route des villages fleuris</Title>
+    </DescriptionData>
+  </Product>
+</Message>
+<Message>
+  <MessageID>2</MessageID>
+  <OperationType>Update</OperationType>
+  <Product>
+    <SKU>BKL9780066210810</SKU>
+    <StandardProductID>
+      <Type>UPC</Type>
+      <Value>9780066210810</Value>
+    </StandardProductID>
+    <DescriptionData>
+      <Title>Brave Men, Gentle Heroes - American Fathers and Sons in WW2</Title>
+    </DescriptionData>
+  </Product>
+</Message>
+<Message>
+  <MessageID>3</MessageID>
+  <OperationType>Update</OperationType>
+  <Product>
+    <SKU>BKL9780375844461</SKU>
+    <StandardProductID>
+      <Type>UPC</Type>
+      <Value>9780375844461</Value>
+    </StandardProductID>
+    <DescriptionData>
+      <Title>Surface Tension: A Novel in Four Summers</Title>
+    </DescriptionData>
+  </Product>
+</Message>
+<Message>
+  <MessageID>4</MessageID>
+  <OperationType>Update</OperationType>
+  <Product>
+    <SKU>BKL9780374166854</SKU>
+    <StandardProductID>
+      <Type>UPC</Type>
+      <Value>9780374166854</Value>
+    </StandardProductID>
+    <DescriptionData>
+      <Title>Hot, Flat, and Crowded: Why We Need a Green Revolution--and How It Can Renew America</Title>
+    </DescriptionData>
+  </Product>
+</Message>
+<Message>
+  <MessageID>5</MessageID>
+  <OperationType>Update</OperationType>
+  <Product>
+    <SKU>BKL9780495826392</SKU>
+    <StandardProductID>
+      <Type>UPC</Type>
+      <Value>9780495826392</Value>
+    </StandardProductID>
+    <DescriptionData>
+      <Title>Coloring Book for Sherwood's Human Physiology: From Cells to Systems, 7th (Paperback)</Title>
+    </DescriptionData>
+  </Product>
+</Message>
+<Message>
+  <MessageID>6</MessageID>
+  <OperationType>Update</OperationType>
+  <Product>
+    <SKU>BKL9781557885227</SKU>
+    <StandardProductID>
+      <Type>UPC</Type>
+      <Value>9781557885227</Value>
+    </StandardProductID>
+    <DescriptionData>
+      <Title>Extreme Pumpkins</Title>
+    </DescriptionData>
+  </Product>
+</Message>
+<Message>
+  <MessageID>7</MessageID>
+  <OperationType>Update</OperationType>
+  <Product>
+    <SKU>BKL9780670020522</SKU>
+    <StandardProductID>
+      <Type>UPC</Type>
+      <Value>9780670020522</Value>
+    </StandardProductID>
+    <DescriptionData>
+      <Title>Wandering Stars</Title>
+    </DescriptionData>
+  </Product>
+</Message>
+<Message>
+  <MessageID>8</MessageID>
+  <OperationType>Update</OperationType>
+  <Product>
+    <SKU>BKL9780060884598</SKU>
+    <StandardProductID>
+      <Type>UPC</Type>
+      <Value>9780060884598</Value>
+    </StandardProductID>
+    <DescriptionData>
+      <Title>The Man Who Loved China: The Fantastic Story of the Eccentric Scientist Who Unlocked the Mysteries of the Middle Kingdom</Title>
+    </DescriptionData>
+  </Product>
+</Message>
+<Message>
+  <MessageID>9</MessageID>
+  <OperationType>Update</OperationType>
+  <Product>
+    <SKU>BKL723724466029</SKU>
+    <StandardProductID>
+      <Type>UPC</Type>
+      <Value>723724466029</Value>
+    </StandardProductID>
+    <DescriptionData>
+      <Title>ZEN MEDITATIONS</Title>
+    </DescriptionData>
+  </Product>
+</Message>
+<Message>
+  <MessageID>10</MessageID>
+  <OperationType>Update</OperationType>
+  <Product>
+    <SKU>BKL074646039625</SKU>
+    <StandardProductID>
+      <Type>UPC</Type>
+      <Value>074646039625</Value>
+    </StandardProductID>
+    <DescriptionData>
+      <Title>GALA CHRISTMAS INVIENNA</Title>
+    </DescriptionData>
+  </Product>
+</Message>
+<Message>
+  <MessageID>11</MessageID>
+  <OperationType>Update</OperationType>
+  <Product>
+    <SKU>BKL9780470683989</SKU>
+    <StandardProductID>
+      <Type>UPC</Type>
+      <Value>9780470683989</Value>
+    </StandardProductID>
+    <DescriptionData>
+      <Title>iPhone SDK 3 Programming: Advanced Mobile Development for Apple Iphone and Ipod Touch</Title>
+    </DescriptionData>
+  </Product>
+</Message>
+<Message>
+  <MessageID>12</MessageID>
+  <OperationType>Update</OperationType>
+  <Product>
+    <SKU>BKL9780814632857</SKU>
+    <StandardProductID>
+      <Type>UPC</Type>
+      <Value>9780814632857</Value>
+    </StandardProductID>
+    <DescriptionData>
+      <Title>Living Liturgy for Cantors: Year A 2011</Title>
+    </DescriptionData>
+  </Product>
+</Message>
+<Message>
+  <MessageID>13</MessageID>
+  <OperationType>Update</OperationType>
+  <Product>
+    <SKU>BKL859156231727</SKU>
+    <StandardProductID>
+      <Type>UPC</Type>
+      <Value>859156231727</Value>
+    </StandardProductID>
+    <DescriptionData>
+      <Title>WHAT'S NEW</Title>
+    </DescriptionData>
+  </Product>
+</Message>
+<Message>
+  <MessageID>14</MessageID>
+  <OperationType>Update</OperationType>
+  <Product>
+    <SKU>BKL9781593762384</SKU>
+    <StandardProductID>
+      <Type>UPC</Type>
+      <Value>9781593762384</Value>
+    </StandardProductID>
+    <DescriptionData>
+      <Title>The Withdrawal Method: Stories</Title>
+    </DescriptionData>
+  </Product>
+</Message>
+<Message>
+  <MessageID>15</MessageID>
+  <OperationType>Update</OperationType>
+  <Product>
+    <SKU>BKL9780738562834</SKU>
+    <StandardProductID>
+      <Type>UPC</Type>
+      <Value>9780738562834</Value>
+    </StandardProductID>
+    <DescriptionData>
+      <Title>(Postcards of America) Manchester-by-theSea</Title>
+    </DescriptionData>
+  </Product>
+</Message>
+<Message>
+  <MessageID>16</MessageID>
+  <OperationType>Update</OperationType>
+  <Product>
+    <SKU>BKL9780345325228</SKU>
+    <StandardProductID>
+      <Type>UPC</Type>
+      <Value>9780345325228</Value>
+    </StandardProductID>
+    <DescriptionData>
+      <Title>Ride the Wind</Title>
+    </DescriptionData>
+  </Product>
+</Message>
+<Message>
+  <MessageID>17</MessageID>
+  <OperationType>Update</OperationType>
+  <Product>
+    <SKU>BKL9781591747000</SKU>
+    <StandardProductID>
+      <Type>UPC</Type>
+      <Value>9781591747000</Value>
+    </StandardProductID>
+    <DescriptionData>
+      <Title>Friendship Bracelets</Title>
+    </DescriptionData>
+  </Product>
+</Message>
+<Message>
+  <MessageID>18</MessageID>
+  <OperationType>Update</OperationType>
+  <Product>
+    <SKU>BKL9780071598286</SKU>
+    <StandardProductID>
+      <Type>UPC</Type>
+      <Value>9780071598286</Value>
+    </StandardProductID>
+    <DescriptionData>
+      <Title>The New Age of Innovation: Driving Cocreated Value Through Global Networks</Title>
+    </DescriptionData>
+  </Product>
+</Message>
+</AmazonEnvelope>
