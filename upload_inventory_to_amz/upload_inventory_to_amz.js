@@ -8,6 +8,7 @@ var mysql = require('mysql');
 
 var inputFile = process.argv[3];
 
+
 // CONFIGURATION ==========================================================
 var connection = mysql.createConnection({
     host: 'tsunami2014.cwj0cl8a8xkt.us-west-2.rds.amazonaws.com',
@@ -15,6 +16,8 @@ var connection = mysql.createConnection({
     password: 'ioi3JFI3lsne42',
     database: "tsu2014"
 });
+
+
 
 var header = '<?xml version="1.0" encoding="utf-8" ?>\n<AmazonEnvelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="amzn-envelope.xsd">\n';
 var closer = '</AmazonEnvelope>';
@@ -174,7 +177,7 @@ function submitFeed(feedType, filepath) {
 			console.log("--------");
 			var submitId = RESULT.SubmitFeedResponse.SubmitFeedResult[0].FeedSubmissionInfo[0].FeedSubmissionId[0];
 			if (connected) recordResultofUploadtoAmazon(feedType, submitId);
-			fs.writeFile("upload_inventory_to_amz/XMLFeedFiles/" + submitId + feedType + ".txt", xml, function(err) {
+			fs.writeFile("XMLFeedFiles/" + submitId + feedType + ".txt", xml, function(err) {
 				if (err) return console.log(err);		
 			});
 		});
@@ -183,7 +186,7 @@ function submitFeed(feedType, filepath) {
 
 function start() {
 	var inventoryUpdateType = "";
-	
+
 	if (inputFile.indexOf("modp") > -1) inventoryUpdateType = "modp";
 	else if (inputFile.indexOf("mod") > -1) inventoryUpdateType = "mod";
 	else if (inputFile.indexOf("add") > -1) inventoryUpdateType = "add";
@@ -201,6 +204,9 @@ function start() {
 			submitFeed("_POST_PRODUCT_PRICING_DATA_", inputFile);
 			submitFeed("_POST_INVENTORY_AVAILABILITY_DATA_", inputFile);
 			break;
+	      default: 
+	        console.log("The filename does not have any of these: modp, mod, add");
+	    break;
 	}
 }
 
