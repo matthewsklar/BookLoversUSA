@@ -52,7 +52,7 @@ client.invoke(sf, function(RESULT) {
 	    connection.query('SELECT * FROM orders WHERE UUID = ' + uuid, function(err, rows, fields) {
 		if (rows.length == 0) {
 		    connection.query('INSERT INTO orders SET ?', {"UUID" : uuid, "birthdate" : birthdate, "ExpirationTime" : "N/A"});
-		    connection.query('INSERT INTO addresses SET ?', {"REForder" : uuid, "name" : shippingAddress.Name, "addr1" : shippingAddress.AddressLine1, "addr2" : shippingAddress.AddressLine2, "addr3" : shippingAddress.AddressLine3, "addr4" : shippingAddress.AddressLine4, "city" : shippingAddress.City, "stateprovince" : shippingAddress.StateOrRegion, "postalcode" : shippingAddress.PostalCode, "country" : shippingAddress.CountryCode, "email" : order.BuyerEmail, "phone" : shippingAddress.Phone});
+		    connection.query('INSERT INTO addresses SET ?', {"REForder" : uuid, "name" : shippingAddress.Name, "addr1" : shippingAddress.AddressLine1, "addr2" : (shippingAddress.AddressLine2||""), "addr3" : shippingAddress.AddressLine3, "addr4" : shippingAddress.AddressLine4, "city" : shippingAddress.City, "stateprovince" : shippingAddress.StateOrRegion, "postalcode" : shippingAddress.PostalCode, "country" : shippingAddress.CountryCode, "email" : order.BuyerEmail, "phone" : shippingAddress.Phone});
 		    var fs = new mwsOrderAPI.requests.ListOrderItems();
 		    fs.params.AmazonOrderId.value = uuid;
 		    client.invoke(fs, function(RESULT) {
